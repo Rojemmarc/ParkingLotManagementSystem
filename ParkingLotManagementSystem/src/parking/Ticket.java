@@ -4,6 +4,7 @@ package parking;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.Duration;
+import vehicles.*;
 
 public class Ticket {
 

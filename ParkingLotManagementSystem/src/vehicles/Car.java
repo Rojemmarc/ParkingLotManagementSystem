@@ -1,13 +1,14 @@
 package vehicles;
 
 public class Car extends Vehicle {
-    String carBrand;
-    String carModel;
-    String transmissionType;
+    private String carBrand;
+    private String carModel;
+    private String transmissionType;
+
 
     public Car(String ownerName, String plateNumber, int entryTime, int exitTime,
                int numberOfDoors, String fuelType, String transmissionType, String carModel) {
-        super(ownerName, "Car", plateNumber, entryTime, exitTime);
+        super(ownerName, "Car", plateNumber);
         this.carBrand = carModel;
         this.carModel = carModel;
         this.transmissionType = transmissionType;

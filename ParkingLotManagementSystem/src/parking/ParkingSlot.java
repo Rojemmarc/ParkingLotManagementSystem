@@ -1,5 +1,7 @@
-package parking;
+package parking;import vehicles.*;
 //  ParkingSlot.java
+
+import vehicles.*;
 
 public class ParkingSlot {
 

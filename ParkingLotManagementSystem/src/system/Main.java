@@ -1,8 +1,11 @@
 package system;
 
 import java.util.Scanner;
+import parking.*;
+import vehicles.Vehicle;
+import vehicles.VehicleFactory;
 
-public class MainApp {
+public class Main {
 
     //Shared resources
     private static final Scanner      scanner      = new Scanner(System.in);
@@ -36,102 +39,102 @@ public class MainApp {
 
     //  OPTION 1 — Park a vehicle
     private static void parkVehicle() {
-        System.out.println("\n── PARK A VEHICLE ──────────────────────────");
+//        System.out.println("\n── PARK A VEHICLE ──────────────────────────");
+//
+//        // Choose vehicle type
+//        System.out.println("  Vehicle types:");
+//        System.out.println("    1. Car");
+//        System.out.println("    2. Motorbike");
+//        System.out.println("    3. Truck");
+//        int typeChoice = readInt("  Select type: ");
+//
+//        String plate = readString("  Plate number : ");
+//        String owner = readString("  Owner name   : ");
+//
+//        // Build vehicle via the factory (Naveo's class)
+//        Vehicle vehicle = VehicleFactory.createVehicle(typeChoice, plate, owner, scanner);
+//        if (vehicle == null) {
+//            System.out.println("  ✖  Invalid vehicle type selection.\n");
+//            return;
+//        }
+//
+//        // ParkingManager finds a compatible slot and issues a Ticket
+//        Ticket ticket = manager.parkVehicle(vehicle);
+//        if (ticket != null) {
+//            System.out.println("\n  ✔  Parking successful! Keep your ticket.");
+//            ticket.printTicket();
+//        } else {
+//            System.out.println("  ✖  No available slot for this vehicle type.\n");
+//        }
+  }
 
-        // Choose vehicle type
-        System.out.println("  Vehicle types:");
-        System.out.println("    1. Car");
-        System.out.println("    2. Motorbike");
-        System.out.println("    3. Truck");
-        int typeChoice = readInt("  Select type: ");
 
-        String plate = readString("  Plate number : ");
-        String owner = readString("  Owner name   : ");
-
-        // Build vehicle via the factory (Naveo's class)
-        Vehicle vehicle = VehicleFactory.createVehicle(typeChoice, plate, owner, scanner);
-        if (vehicle == null) {
-            System.out.println("  ✖  Invalid vehicle type selection.\n");
-            return;
-        }
-
-        // ParkingManager finds a compatible slot and issues a Ticket
-        Ticket ticket = manager.parkVehicle(vehicle);
-        if (ticket != null) {
-            System.out.println("\n  ✔  Parking successful! Keep your ticket.");
-            ticket.printTicket();
-        } else {
-            System.out.println("  ✖  No available slot for this vehicle type.\n");
-        }
+//    //  OPTION 2 — Remove a vehicle and collect fee
+     private static void removeVehicle() {
+//        System.out.println("\n── REMOVE A VEHICLE ────────────────────────");
+//        String plate = readString("  Enter plate number: ");
+//
+//        Ticket ticket = manager.findTicketByPlate(plate);
+//        if (ticket == null) {
+//            System.out.println("  ✖  No active ticket found for plate: " + plate + "\n");
+//            return;
+//        }
+//
+//        // Close the ticket (records exit time)
+//        ticket.closeTicket();
+//
+//        // Calculate and display fee
+//        double fee = feeCalc.calculateFee(ticket);
+//        System.out.println();
+//        ticket.printTicket();
+//        feeCalc.printFeeBreakdown(ticket.getVehicle(), ticket.getDurationHours());
+//
+//        System.out.printf("%n  ► Amount due: PHP %.2f%n", fee);
+//        System.out.println("  ► Please collect payment and issue receipt.");
+//
+//        // Remove vehicle from lot
+//        manager.removeVehicle(plate);
+//        System.out.println("  ✔  Vehicle removed. Slot is now free.\n");
     }
 
 
-    //  OPTION 2 — Remove a vehicle and collect fee
-    private static void removeVehicle() {
-        System.out.println("\n── REMOVE A VEHICLE ────────────────────────");
-        String plate = readString("  Enter plate number: ");
-
-        Ticket ticket = manager.findTicketByPlate(plate);
-        if (ticket == null) {
-            System.out.println("  ✖  No active ticket found for plate: " + plate + "\n");
-            return;
+//    //  OPTION 3 — View all parking slots
+        private static void viewAllSlots() {
+//        System.out.println("\n── PARKING LOT STATUS ──────────────────────");
+//        manager.printAllSlots();
+//        System.out.println();
+     }
+//
+//
+//    //  OPTION 4 — View a specific ticket
+        private static void viewTicket() {
+//        System.out.println("\n── VIEW TICKET ─────────────────────────────");
+//        String plate = readString("  Enter plate number: ");
+//        Ticket ticket = manager.findTicketByPlate(plate);
+//        if (ticket == null) {
+//            System.out.println("  ✖  No active ticket found for plate: " + plate + "\n");
+//        } else {
+//            ticket.printTicket();
+//            System.out.printf(
+//                    "  Current fee (if exiting now): PHP %.2f%n%n",
+//                    feeCalc.calculateFee(ticket)
+//            );
+//        }
         }
 
-        // Close the ticket (records exit time)
-        ticket.closeTicket();
-
-        // Calculate and display fee
-        double fee = feeCalc.calculateFee(ticket);
-        System.out.println();
-        ticket.printTicket();
-        feeCalc.printFeeBreakdown(ticket.getVehicle(), ticket.getDurationHours());
-
-        System.out.printf("%n  ► Amount due: PHP %.2f%n", fee);
-        System.out.println("  ► Please collect payment and issue receipt.");
-
-        // Remove vehicle from lot
-        manager.removeVehicle(plate);
-        System.out.println("  ✔  Vehicle removed. Slot is now free.\n");
-    }
-
-
-    //  OPTION 3 — View all parking slots
-    private static void viewAllSlots() {
-        System.out.println("\n── PARKING LOT STATUS ──────────────────────");
-        manager.printAllSlots();
-        System.out.println();
-    }
-
-
-    //  OPTION 4 — View a specific ticket
-    private static void viewTicket() {
-        System.out.println("\n── VIEW TICKET ─────────────────────────────");
-        String plate = readString("  Enter plate number: ");
-        Ticket ticket = manager.findTicketByPlate(plate);
-        if (ticket == null) {
-            System.out.println("  ✖  No active ticket found for plate: " + plate + "\n");
-        } else {
-            ticket.printTicket();
-            System.out.printf(
-                    "  Current fee (if exiting now): PHP %.2f%n%n",
-                    feeCalc.calculateFee(ticket)
-            );
+//
+//    //  OPTION 6 — Search for a vehicle by plate
+        private static void searchVehicle() {
+//        System.out.println("\n── SEARCH VEHICLE ──────────────────────────");
+//        String plate = readString("  Enter plate number: ");
+//        ParkingSlot slot = manager.findSlotByPlate(plate);
+//        if (slot == null) {
+//            System.out.println("  ✖  Vehicle not found in the lot.\n");
+//        } else {
+//            System.out.println("  ✔  " + slot);
+//            System.out.println();
+//        }
         }
-    }
-
-
-    //  OPTION 6 — Search for a vehicle by plate
-    private static void searchVehicle() {
-        System.out.println("\n── SEARCH VEHICLE ──────────────────────────");
-        String plate = readString("  Enter plate number: ");
-        ParkingSlot slot = manager.findSlotByPlate(plate);
-        if (slot == null) {
-            System.out.println("  ✖  Vehicle not found in the lot.\n");
-        } else {
-            System.out.println("  ✔  " + slot);
-            System.out.println();
-        }
-    }
 
     //  UI helpers
     private static void printBanner() {

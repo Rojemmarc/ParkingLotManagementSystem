@@ -7,11 +7,15 @@ public class Motorbike extends Vehicle {
 
     public Motorbike(String ownerName, String plateNumber, int entryTime,
                      int engineCapacity, boolean hasSidecar, String motorbikeModel) {
-        super(ownerName, plateNumber, entryTime);
+        super(ownerName, "Motorbike", plateNumber);
         this.engineCapacity = engineCapacity;
         this.hasSidecar = hasSidecar;
         this.motorbikeModel = motorbikeModel;
     }
+
+    public int     getEngineCapacity() { return engineCapacity; }
+    public boolean hasSidecar()        { return hasSidecar;     }
+    public String  getMotorbikeModel() { return motorbikeModel; }
 
     @Override
     public String toString() {

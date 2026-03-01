@@ -2,6 +2,8 @@ package parking;
 
 //  Author  : Quezon, Lanhce
 
+import vehicles.*;
+
 public class FeeCalculator {
 
     // ── Rate table (PHP) ──────────────────────────────────────
@@ -44,8 +46,7 @@ public class FeeCalculator {
         }
     }
 
-    //
-    Overload: convenience method that reads duration directly from a Ticket.
+    //Overload: convenience method that reads duration directly from a Ticket.
     public double calculateFee(Ticket ticket) {
         return calculateFee(ticket.getVehicle(), ticket.getDurationHours());
     }
