@@ -5,22 +5,23 @@ public class Motorbike extends Vehicle {
     private boolean hasSidecar;
     private String motorbikeModel;
 
-    public Motorbike(String ownerName, String plateNumber, int entryTime,
+    public Motorbike(String ownerName, String plateNumber, int entryTime, int exitTime,
                      int engineCapacity, boolean hasSidecar, String motorbikeModel) {
-        super(ownerName, "Motorbike", plateNumber);
+        super(ownerName, "Motorbike", plateNumber, entryTime, exitTime);
         this.engineCapacity = engineCapacity;
         this.hasSidecar = hasSidecar;
         this.motorbikeModel = motorbikeModel;
     }
 
-    public int     getEngineCapacity() { return engineCapacity; }
-    public boolean hasSidecar()        { return hasSidecar;     }
-    public String  getMotorbikeModel() { return motorbikeModel; }
+    @Override
+    public double calculateFee() {
+        int duration = getExitTime() - getEntryTime();
+        return duration * 30.0; // Motorbikes pay ₱30 per hour
+    }
 
     @Override
     public String toString() {
-        return toString() + " | Model: " + motorbikeModel +
+        return super.toString() + " | Model: " + motorbikeModel +
                 ", Engine: " + engineCapacity + "cc, Sidecar: " + (hasSidecar ? "Yes" : "No");
     }
 }
-
