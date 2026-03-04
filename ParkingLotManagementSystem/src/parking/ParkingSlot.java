@@ -76,8 +76,9 @@ public class ParkingSlot {
     public SlotType  getSlotType()      { return slotType;      }
     public boolean   isOccupied()       { return isOccupied;    }
     public Vehicle   getParkedVehicle() { return parkedVehicle; }
+    public int      getSlotNumber()    { return slotId; }
 
-    //Display helper
+        //Display helper
     @Override
     public String toString() {
         String status = isOccupied

@@ -2,12 +2,12 @@ package people;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import parking.*;
 
 
 public class Receipt {
 
     private static int receiptCounter = 1000;
-
     private String receiptNumber;
     private Customer customer;
     private Ticket ticket;
@@ -29,23 +29,18 @@ public class Receipt {
     public String getReceiptNumber() {
         return receiptNumber;
     }
-
     public Customer getCustomer() {
         return customer;
     }
-
     public Ticket getTicket() {
         return ticket;
     }
-
     public double getAmountPaid() {
         return amountPaid;
     }
-
     public Staff getProcessedBy() {
         return processedBy;
     }
-
     public LocalDateTime getPaymentTime() {
         return paymentTime;
     }

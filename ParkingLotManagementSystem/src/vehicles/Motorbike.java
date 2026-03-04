@@ -13,9 +13,13 @@ public class Motorbike extends Vehicle {
         this.motorbikeModel = motorbikeModel;
     }
 
+    public int     getEngineCapacity() { return engineCapacity; }
+    public boolean hasSidecar()        { return hasSidecar;     }
+    public String  getMotorbikeModel() { return motorbikeModel; }
+
     @Override
     public double calculateFee() {
-        int duration = getExitTime() - getEntryTime();
+        int duration = Math.max(1, getExitTime() - getEntryTime());
         return duration * 30.0; // Motorbikes pay ₱30 per hour
     }
 

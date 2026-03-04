@@ -1,5 +1,7 @@
 package people;
 
+import parking.*;
+
 
 public class Staff {
 
@@ -26,15 +28,12 @@ public class Staff {
     public String getStaffId() {
         return staffId;
     }
-
     public String getName() {
         return name;
     }
-
     public Role getRole() {
         return role;
     }
-
     public String getShift() {
         return shift;
     }
@@ -43,7 +42,6 @@ public class Staff {
     public void setRole(Role role) {
         this.role = role;
     }
-
     public void setShift(String shift) {
         this.shift = shift;
     }

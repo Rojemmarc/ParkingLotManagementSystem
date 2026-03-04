@@ -15,7 +15,7 @@ public class Car extends Vehicle {
 
     @Override
     public double calculateFee() {
-        int duration = getExitTime() - getEntryTime();
+        int duration = Math.max(1, getExitTime() - getEntryTime());
         return duration * 50.0; // Cars pay ₱50 per hour
     }
 

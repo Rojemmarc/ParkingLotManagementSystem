@@ -34,7 +34,7 @@ public class Ticket {
         this.closed    = false;
     }
 
-        //Core behaviour
+    //Core behaviour
      //Closes the ticket by recording the exit time.
      //Can only be called once per ticket.
     public void closeTicket() {
@@ -61,6 +61,7 @@ public class Ticket {
     public LocalDateTime getEntryTime() { return entryTime; }
     public LocalDateTime getExitTime()  { return exitTime;  }
     public boolean       isClosed()     { return closed;    }
+    public ParkingSlot   getParkingSlot() { return slot; }
 
     //Display helper
     //Prints a formatted ticket to the console.

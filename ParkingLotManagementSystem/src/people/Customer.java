@@ -16,34 +16,15 @@ public class Customer {
     }
 
     // Getters
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getContactNumber() {
-        return contactNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
+    public String getCustomerId() { return customerId; }
+    public String getName() { return name; }
+    public String getContactNumber() { return contactNumber; }
+    public String getEmail() {  return email; }
 
     // Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public void setName(String name) { this.name = name; }
+    public void setContactNumber(String contactNumber) { this.contactNumber = contactNumber; }
+    public void setEmail(String email) { this.email = email; }
 
     @Override
     public String toString() {

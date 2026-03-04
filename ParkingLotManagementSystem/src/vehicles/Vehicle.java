@@ -21,6 +21,7 @@ public abstract class Vehicle {
     public String getPlateNumber() { return plateNumber; }
     public int getEntryTime() { return entryTime; }
     public int getExitTime() { return exitTime; }
+    public String getOwner() { return ownerName; }
 
     // Setters
     public void setEntryTime(int entryTime) { this.entryTime = entryTime; }
