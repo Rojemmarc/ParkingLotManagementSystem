@@ -13,9 +13,6 @@ public class Motorbike extends Vehicle {
         this.motorbikeModel = motorbikeModel;
     }
 
-    public int     getEngineCapacity() { return engineCapacity; }
-    public boolean hasSidecar()        { return hasSidecar;     }
-    public String  getMotorbikeModel() { return motorbikeModel; }
 
     @Override
     public double calculateFee() {

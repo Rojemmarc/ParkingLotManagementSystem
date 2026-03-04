@@ -1,5 +1,9 @@
 package system;
 
+// Author: Raden, Brandon Carl
+// Per layout report: "Manages all parking slots and vehicles within the lot."
+// ParkingManager uses ParkingLot as its slot store.
+
 import parking.ParkingSlot;
 import parking.ParkingSlot.SlotType;
 import vehicles.Vehicle;

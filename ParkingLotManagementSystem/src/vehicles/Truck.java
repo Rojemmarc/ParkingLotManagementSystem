@@ -14,10 +14,6 @@ public class Truck extends Vehicle {
         this.truckModel    = truckModel;
     }
 
-    public double getCargoCapacity() { return cargoCapacity; }
-    public int    getAxleCount()     { return axleCount;     }
-    public String getTruckModel()    { return truckModel;    }
-
 
     @Override
     public double calculateFee() {
