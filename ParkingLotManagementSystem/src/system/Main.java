@@ -9,7 +9,8 @@ public class Main {
 
     //Shared resources
     private static final Scanner      scanner      = new Scanner(System.in);
-    private static final ParkingManager manager    = new ParkingManager();
+    private static final ParkingLot lot = new ParkingLot(5, 5, 3);
+    private static final ParkingManager manager    = new ParkingManager(lot);
     private static final FeeCalculator feeCalc     = new FeeCalculator();
 
     //Entry point
